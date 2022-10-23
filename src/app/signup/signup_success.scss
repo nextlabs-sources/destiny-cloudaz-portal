@@ -1,0 +1,54 @@
+
+.section-panel {
+  background: #FFFFFF;
+  font-family: Lato;
+  font-style: normal;
+  color: #36424A;
+  max-width: 100%;
+  padding-top: 6em;
+  padding-bottom: 10em;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+  padding-bottom: 0.5em;
+}
+
+.confirm-header {
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+.confirm-message {
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+  
+}
+
+.confirm-note {
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+  padding-top: 2em;
+  color: grey;
+}
+
+.confirm-link {
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.resend-message {
+  padding-top: 2em;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-align: center;
+  color: red;
+}

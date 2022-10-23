@@ -1,0 +1,36 @@
+<div id="signup-success" fxLayout="column" fxLayoutAlign="start" class="section-panel">
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="column" fxLayoutAlign="center" fxFlex="80">
+      <span class="label">You are almost there ...</span>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+      <div fxLayout="column" fxLayoutAlign="center" fxFlex="80">
+
+        <div fxLayout="row" fxLayoutAlign="center">
+          <img width="30" src="assets/img/paper-plane.svg"/>
+        </div>
+        
+        <span class="confirm-header">
+          We have send an email to <b>{{email}}</b>.
+        </span>
+      
+        <span class="confirm-message">
+            Please answer the questions in the email to begin using cloudAz. 
+        </span>
+
+        <span class="confirm-note">
+          If you haven't received the email, 
+        </span>
+        <span class="confirm-link">
+          <a href="#" (click)="!!resendEmail()">Resend another email</a>
+        </span>
+        <div fxLayout="row" fxLayoutAlign="center">
+            <span class="resend-message">{{resendEmailMessage}}</span>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+

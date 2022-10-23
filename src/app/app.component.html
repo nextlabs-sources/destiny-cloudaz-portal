@@ -1,0 +1,164 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav [(opened)]="drawerOpened" class="sidenav" role="navigation" position="end" *ngIf="cache.isVisibleMenu">
+      <mat-nav-list>
+        <a mat-list-item (click)="gotoWhy()">Why CloudAz</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="gotoAbac()">Dynamic Authorization</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="gotoSdk()">REST API and SDK</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="gotoFeatures()">Features</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="gotoFeatures()">Resources</a>
+        <mat-divider></mat-divider>
+        <a mat-list-item (click)="gotoReachUs()">Reach Us</a>
+        <mat-divider></mat-divider>
+
+        <input mat-list-item type="button" class="cloudaz-signup-button-2"
+              value="Sign up" (click)="gotoSignup()" />
+
+        <input mat-list-item type="button" class="cloudaz-signup-button-2"
+              value="Login" (click)="gotoLogin()" />
+
+
+      </mat-nav-list>
+    </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1em">
+        <div class="logo-panel">
+          <a href="https://www.nextlabs.com" target="_blank">
+            <img class="img-logo" src="assets/img/cloudaz/nextlabs_logo.svg" alt="NextLabs Logo"/>
+          </a>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div class="cloudaz-panel">
+          <a routerLink="/home" fragment="main">
+            <img class="img-cloudaz" src="assets/img/cloudaz/cloudaz_logo.svg" alt="CloudAz Logo"/>
+          </a>
+        </div>
+      </div>
+
+      <ng-container *ngIf="cache.isVisibleMenu">
+        <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1em" fxHide.lt-sm>
+          <ul fxLayout fxLayoutGap="0.1em" class="navigation-items">
+            <li>
+              <a class="menu-item" routerLink="/home" fragment="why">Why CloudAz</a>
+            </li>
+            <li fxHide.lt-md>
+              <a class="menu-item" routerLink="/home" fragment="abac">Dynamic Authorization</a>
+            </li>
+            <li fxHide.lt-md>
+              <a class="menu-item" routerLink="/home" fragment="sdk">REST API and SDK</a>
+            </li>
+            <li fxHide.lt-lg>
+              <a class="menu-item" routerLink="/home" fragment="features">Features</a>
+            </li>
+            <li fxHide.lt-lg>
+              <a class="menu-item" routerLink="/resources">Resources</a>
+            </li>
+            <li fxHide.lt-lg>
+              <a class="menu-item" routerLink="/home" fragment="reach-us">Reach Us</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="fill-remaining-space"></div>
+
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1em" fxHide.lt-sm>
+          <button class="cloudaz-signup-button" routerLink="signup">Sign up</button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="1em" fxHide.lt-sm>
+          <button class="cloudaz-signup-button" (click)="gotoLogin()">Login</button>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="end" fxHide.gt-xs>
+          <button type="button"
+                  aria-label="Toggle sidenav"
+                  mat-icon-button
+                  (click)="clickDrawer()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+
+    </mat-toolbar>
+
+    <!-- Add Content Here -->
+    <div id="main-content">
+      <div fxLayout="column" fxLayoutAlign="center">
+        <router-outlet></router-outlet>
+      </div>
+      
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center" id="main-footer">
+      <div fxLayout="row" fxLayoutAlign="center" >
+        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="0.5em" fxFlex="80">
+          <div fxLayout="row" fxLayoutAlign="center center" >
+              <span class="footer-padding">
+                <a href="https://www.cloudaz.com" target="_blank">
+                    <img width="84" src="assets/img/cloudaz/cloudaz_footer.png" alt="CloudAz"/>
+                </a>
+              </span>
+              <span class="footer-icon-padding">
+                <a href="https://twitter.com/nextlabs" target="_blank">
+                    <img width="26" src="assets/img/cloudaz/twitter_footer.png" alt="Twitter"/>
+                </a>
+              </span>
+              <span class="footer-icon-padding">
+                <a href="https://www.linkedin.com/company/nextlabs" target="_blank">
+                    <img width="26" src="assets/img/cloudaz/linkedin_footer.png" alt="Linkedin"/>
+                </a>
+              </span>
+              <span class="footer-icon-padding">
+                <a href="https://www.nextlabs.com" target="_blank">
+                    <img width="26" src="assets/img/cloudaz/nextlabs_footer.png" alt="NextLabs"/>
+                </a>
+              </span>
+          </div>
+          
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="1em">
+
+            <div fxLayout="column" fxLayoutAlign="center">
+              <a href="https://www.nextlabs.com/terms-conditions-cloudaz/" target="_blank">Terms &amp; Conditions</a>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="center">
+              <span class="footer-vertical-divider"></span>
+            </div>
+            <a href="https://www.nextlabs.com/privacy-policy" target="_blank">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center" id="main-footer-bar">
+      <div fxLayout="row"  fxLayoutAlign="center">
+        <p>Copyright © 2022 NextLabs, Inc. All rights reserved.</p>
+      </div>
+    </div>
+
+    <div id="consent-pane" class="cookie-consent-bar" *ngIf="showCookieConsent">
+      <div class="section section-bar">
+        <div class="columns">
+          <div class="column is-10">
+            <span>We use cookies to improve your experience on our website. By continuing you are 
+              giving consent to cookies being used. For more information on cookies and how we use them, 
+              see our
+            </span>
+            <a class="consent-link" href="https://www.nextlabs.com/privacy-policy/" target="_blank">Privacy Policy</a>      
+          </div>
+          <div class="column is-2">
+            <button class="consent-button" (click)="updateCookieConsent()">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

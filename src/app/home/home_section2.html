@@ -1,0 +1,186 @@
+<div id="get-started" fxLayout="row" fxLayoutAlign="center" class="section-panel">
+
+    <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="2em">
+        <div fxLayout="row" fxLayoutAlign="center">
+            <span class="sub-header">Get Started</span>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div class="content-1">Experience CloudAz in four simple steps to safeguard your applications and data.</div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="center" [fxShow]="showPanel">
+
+            <!-- Desktop/Laptop -->
+            <div fxLayout="column" fxLayoutAlign="start" fxHide.lt-md>
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="15vw" fxFlex.gt-lg="12vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="icon-img-1" src="assets/img/cloudaz/free_trial_new.svg"/>
+                        </div>
+
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="sub-header-2 sub-header-padding">Sign up for a free<br/>trial</span>
+                        </div>
+
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="content-2">We are offering free trial. Allow yourself to kick the tires and see how
+                                quick and easy to implement CloudAz authorization into your applications.</span>
+                        </div>
+                    </div>
+
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="3vw" fxFlex.gt-lg="2vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="arrow-img" src="assets/img/cloudaz/arrow.svg"/>
+                        </div>
+                    </div>
+                    
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="15vw" fxFlex.gt-lg="12vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="icon-img-2" src="assets/img/cloudaz/try_sample.svg"/>
+                        </div>
+
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="sub-header-2 sub-header-padding">Try our sample<br/>applications</span>
+                        </div>
+
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="content-2">Get started without any prior knowledge of ABAC with our sample applications and
+                                policies by following a set of simple step by step instructions.</span>
+                        </div>
+
+                    </div>
+                    
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="3vw" fxFlex.gt-lg="2vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="arrow-img" src="assets/img/cloudaz/arrow.svg"/>
+                        </div>
+                    </div>
+
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="15vw" fxFlex.gt-lg="12vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="icon-img-3" src="assets/img/cloudaz/integrate.svg"/>
+                        </div>
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="sub-header-2 sub-header-padding">Integrate with<br/>CloudAz</span>
+                        </div>
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="content-2">Secure and protect your applications with CloudAz in minutes or hours using our
+                                standard-based REST API, client libraries, or SDK in popular programming languages</span>
+                        </div>
+                    </div>
+
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="3vw" fxFlex.gt-lg="2vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="arrow-img" src="assets/img/cloudaz/arrow.svg"/>
+                        </div>
+
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="start" fxFlex="15vw" fxFlex.gt-lg="12vw">
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <img class="icon-img-4" src="assets/img/cloudaz/enforce_policy.svg"/>
+                        </div>
+
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="sub-header-2 sub-header-padding">Enforce<br/>policies</span>
+                        </div>
+
+                        <div fxLayout="row"  fxLayoutAlign="center">
+                            <span class="content-2">Manage authorization policies according to your business need through the CloudAz
+                                web console. The policies are then enforced dynamically with all the access requests and decisions
+                                recorded in a secured audit repository.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile/Phone -->
+            <div fxLayout="row" fxLayoutAlign="center" fxHide.gt-sm>
+                <div fxLayout="column" fxLayoutAlign="center start" fxFlex="10vw">
+                    <button mat-icon-button aria-label="Left" (click)="prevTab()" >
+                        <mat-icon>chevron_left</mat-icon>
+                    </button>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="1em" fxFlex="70vw">
+                    <div fxLayout="row" fxLayoutAlign="center" [fxShow]="showTab1">
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <img class="icon-img-1" src="assets/img/cloudaz/free_trial_new.svg"/>
+
+                            <span class="sub-header-2">Sign up for a free trial</span>
+                            <span class="content-2">We are offering free trial. Allow yourself to kick the tires and see how
+                                quick and easy to implement CloudAz authorization into your applications.</span>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="center" [fxShow]="showTab2">
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <img class="icon-img-2" src="assets/img/cloudaz/try_sample.svg"/>
+
+                            <span class="sub-header-2">Try our sample applications</span>
+                            <span class="content-2">Get started without any prior knowledge of ABAC with our sample applications and
+                                    policies by following a set of simple step by step instructions.</span>
+                        </div>
+
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="center" [fxShow]="showTab3">
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <img class="icon-img-3" src="assets/img/cloudaz/integrate.svg"/>
+
+                            <span class="sub-header-2">Integrate with CloudAz</span>
+                            <span class="content-2">Secure and protect your applications with CloudAz in minutes or hours using our
+                        standard-based REST API, client libraries, or SDK in popular programming languages</span>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="center" [fxShow]="showTab4">
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <img class="icon-img-4" src="assets/img/cloudaz/enforce_policy.svg"/>
+
+                            <span class="sub-header-2">Enforce policies</span>
+                            <span class="content-2">Manage authorization policies according to your business need through the CloudAz
+                                web console. The policies are then enforced dynamically with all the access requests and decisions
+                                recorded in a secured audit repository.</span>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <button mat-icon-button aria-label="Tab1" (click)="gotoTab1()">
+                            <mat-icon [ngClass]="dot1Color">lens</mat-icon>
+                        </button>
+                        <button mat-icon-button aria-label="Tab2" (click)="gotoTab2()">
+                            <mat-icon [ngClass]="dot2Color">lens</mat-icon>
+                        </button>
+                        <button mat-icon-button aria-label="Tab3" (click)="gotoTab3()">
+                            <mat-icon [ngClass]="dot3Color">lens</mat-icon>
+                        </button>
+                        <button mat-icon-button aria-label="Tab4" (click)="gotoTab4()">
+                            <mat-icon [ngClass]="dot4Color">lens</mat-icon>
+                        </button>
+                    </div>
+
+                </div>
+                 <div fxLayout="column" fxLayoutAlign="center end" fxFlex="10vw">
+                     <button mat-icon-button aria-label="Right" (click)="nextTab()">
+                         <mat-icon>chevron_right</mat-icon>
+                     </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="center center" fxLayoutGap="1em">
+            <input type="button" mat-icon-button class="integration-button" value="Integration Steps"
+                   (click)="showIntegrationDetails()"/>
+            <input type="button" class="free-trial-button" value="Sign up for a free trial" routerLink="/signup" />
+
+            <!--
+            <input type="button" class="free-trial-button" value="Sign up for a free trial"
+                   onclick="window.open('https://www.cloudaz.com/signup', '_blank')"/>
+             -->
+        </div>
+
+    </div>
+
+</div>

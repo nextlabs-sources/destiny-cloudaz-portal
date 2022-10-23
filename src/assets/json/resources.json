@@ -1,0 +1,22 @@
+{
+    "whitePapers": {
+        "title": "White papers",
+        "list": [
+            {
+                "title": "Implementing Data Security with Attribute Based Access Control (ABAC)",
+                "desc": "Attribute Based Access Control (ABAC) provides a robust, data security solution that keeps pace with the demands of your extended enterprise.",
+                "link": "https://www.nextlabs.com/resources/white-papers/whitepaper-implementing-data-security-with-attribute-based-access-control-abac/"
+            }
+        ]
+    },
+    "datasheets": {
+        "title": "Datasheets",
+        "list": [
+            {
+                "title": "CloudAz",
+                "desc": "Learn about the cloud authorization service that enforces security policies consistently across the enterprise.",
+                "link": "https://www.nextlabs.com/wp-content/uploads/DS-CloudAz-1.pdf"
+            }
+        ]
+    }
+}

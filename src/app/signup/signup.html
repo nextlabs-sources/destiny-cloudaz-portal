@@ -1,0 +1,108 @@
+<div id="section1" fxLayout="column" fxLayoutAlign="start" class="section-panel">
+
+    <!-- Web Layout -->
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2em" >
+        <div fxFlex="40" fxHide.lt-md>
+            <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="0.5em">
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <img class="img-logo-1" src="assets/img/cloudaz/cloudaz_logo.svg"/>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <div class="img-container">
+                        <img class="img-item" src="assets/img/cloudaz/laptop_1.svg"/>
+                    </div>
+                </div>
+
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <span class="content-left">Data Centric Security & Attribute-based Access Control in Cloud </span>
+                </div>
+            </div>
+        </div>
+        <div fxFlex.gt-sm="40" fxFlex.lt-md="80">
+            <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2em">
+                <div fxLayout="row" fxLayoutAlign="center" fxHide.gt-sm >
+                    <img class="img-logo-2" src="assets/img/cloudaz/cloudaz_logo.svg"/>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start">
+                    <span class="form-header">Request for a free trial</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start" >
+                    <form [formGroup]="signupForm" (ngSubmit)="sendSignup(signupForm.value)" fxFlex>
+                        <div fxLayout="column" fxLayoutAlign="start" class="form-panel" fxLayoutGap="1em" >
+                            <mat-form-field floatLabel="always" >
+                                <input matInput type="text" placeholder="First Name" formControlName="firstName" required>
+                                <mat-error *ngFor="let validation of signup_validation_messages.firstName">
+                                    <mat-error class="error-message" *ngIf="signupForm.get('firstName').hasError(validation.type) && (signupForm.get('firstName').dirty || signupForm.get('firstName').touched)">{{validation.message}}</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field floatLabel="always" >
+                                <input matInput type="text" placeholder="Last Name" formControlName="lastName" required>
+                                <mat-error *ngFor="let validation of signup_validation_messages.lastName">
+                                    <mat-error class="error-message" *ngIf="signupForm.get('lastName').hasError(validation.type) && (signupForm.get('lastName').dirty || signupForm.get('lastName').touched)">{{validation.message}}</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field floatLabel="always" >
+                                <input matInput type="text" placeholder="Company" formControlName="company" required>
+                                <mat-error *ngFor="let validation of signup_validation_messages.company">
+                                    <mat-error class="error-message" *ngIf="signupForm.get('company').hasError(validation.type) && (signupForm.get('company').dirty || signupForm.get('company').touched)">{{validation.message}}</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field floatLabel="always" >
+                                <input matInput type="text" placeholder="Email" formControlName="email" required>
+                                <mat-error *ngFor="let validation of signup_validation_messages.email">
+                                    <mat-error class="error-message" *ngIf="signupForm.get('email').hasError(validation.type) && (signupForm.get('email').dirty || signupForm.get('email').touched)">{{validation.message}}</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <mat-form-field floatLabel="always" >
+                                <input matInput type="text" placeholder="Phone (Optional)" formControlName="phone">
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" floatLabel="always">
+                                <mat-label>Message (Optional)</mat-label>
+                                <textarea matInput rows="4" maxlength="3000" placeholder="Please type your message here" formControlName="notes"></textarea>
+                                <mat-error *ngFor="let validation of signup_validation_messages.notes">
+                                    <mat-error class="error-message" *ngIf="signupForm.get('notes').hasError(validation.type) && (signupForm.get('notes').dirty || signupForm.get('notes').touched)">{{validation.message}}</mat-error>
+                                </mat-error>
+                            </mat-form-field>
+
+                            <div fxLayout="row" fxLayoutAlign="start">
+                                <ngx-recaptcha2 #captchaElem
+                                                [siteKey]="siteKey"
+                                                (reset)="handleReset()"
+                                                (expire)="handleExpire()"
+                                                (error)="handleError()"
+                                                (load)="handleLoad()"
+                                                (success)="handleSuccess($event)"
+                                                [useGlobalDomain]="false"
+                                                size="normal"
+                                                hl="en"
+                                                theme="light"
+                                                type="image"
+                                                formControlName="recaptcha">
+                                </ngx-recaptcha2>
+    
+                            </div>    
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <a href="https://www.nextlabs.com/terms-conditions-cloudaz/" target="_blank">
+                                    By signing up, you agree to our terms and privacy policy
+                                </a>
+                            </div>
+        
+                            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="1em">
+                                <button type="button" mat-raised-button class="cancel-button" routerLink="/home">Cancel</button>
+                                <button type="submit" mat-raised-button class="submit-button" >Send Request</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

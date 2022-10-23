@@ -1,0 +1,128 @@
+<div id="resources" fxLayout="column" fxLayoutAlign="start" fxLayoutGap="2em" *ngIf="!showDialog">
+    <div fxLayout="row" fxLayoutAlign="center" class="section-panel">
+
+        <div class="content-panel">
+            <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="1em" fxFlex="80vw">
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <span class="sub-header">Resources</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <p class="content-1">NextLabs offers several resources to help you learn more about Control Center. Please click on one of the below to see what we’ve got.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Desktop/Laptop -->
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2em" fxHide.lt-md>
+        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2em">
+
+            <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="1em" >
+                <div class="custom-box" *ngFor="let item of white_paper_list">
+                    <div class="img" [style.backgroundImage]="item.thumbnail || item.backgroundImage" (click)="openLink(item)">
+                        <div class="i-name">
+                            <div class="name">{{item.title}}</div>
+                            <div class="name-mock">{{item.title}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                            <div class="link" *ngIf="item.link">
+                                <span class="btn btn-white-hollow">Read White Paper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="custom-box" *ngFor="let item of datasheet_list">
+                    <div class="img" [style.backgroundImage]="item.thumbnail || item.backgroundImage" (click)="openLink(item)">
+                        <div class="i-name">
+                            <div class="name">{{item.title}}</div>
+                            <div class="name-mock">{{item.title}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                            <div class="link" *ngIf="item.link">
+                                <span class="btn btn-white-hollow">Read Datasheet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-box">
+                    <div class="img" [style.backgroundImage]="videoBackgroundImage" [routerLink]='["/videos"]'>
+                        <div class="i-name">
+                            <div class="name">{{videoTitle}}</div>
+                            <div class="name-mock">{{videoTitle}}</div>
+                            <div class="desc">{{videoDescription}}</div>
+                            <div class="link">
+                                <span class="btn btn-white-hollow">View Videos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- Tablet/Mobile -->
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="2em" fxHide.gt-sm >
+        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="1em" fxFlex="90vw">
+                <div class="custom-box" *ngFor="let item of webinar_list">
+                    <div class="img" [style.backgroundImage]="item.thumbnail || item.backgroundImage" (click)="openLink(item)">
+                        <div class="i-name">
+                            <div class="name">{{item.title}}</div>
+                            <div class="name-mock">{{item.title}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                            <div class="link" *ngIf="item.link">
+                                <span class="btn btn-white-hollow">View Webinar</span>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="custom-box" *ngFor="let item of white_paper_list">
+                    <div class="img" [style.backgroundImage]="item.thumbnail || item.backgroundImage" (click)="openLink(item)">
+                        <div class="i-name">
+                            <div class="name">{{item.title}}</div>
+                            <div class="name-mock">{{item.title}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                            <div class="link" *ngIf="item.link">
+                                <span class="btn btn-white-hollow">Read White Paper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-box" *ngFor="let item of datasheet_list">
+                    <div class="img" [style.backgroundImage]="item.thumbnail || item.backgroundImage" (click)="openLink(item)">
+                        <div class="i-name">
+                            <div class="name">{{item.title}}</div>
+                            <div class="name-mock">{{item.title}}</div>
+                            <div class="desc">{{item.desc}}</div>
+                            <div class="link" *ngIf="item.link">
+                                <span class="btn btn-white-hollow">Read Datasheet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>    
+</div>
+
+<div class="section" *ngIf="showDialog">
+    <div [ngClass]="dialogCss()" >
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title"></p>
+                <button class="delete" aria-label="close" (click)="closeDialog()"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <figure class="image is-16by9">
+                    <iframe *ngIf="iframeSrc" class="has-ratio" width="100%" height="auto" [src]="iframeSrc"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </figure>
+            </section>
+        </div>
+    </div>
+</div>

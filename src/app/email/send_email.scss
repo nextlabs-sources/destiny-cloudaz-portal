@@ -1,0 +1,46 @@
+.form-panel {
+    padding-top: 2em;
+    min-height: 60vh;
+}
+
+.form-panel > * {
+    width:100% !important; 
+    font-family: Lato;
+    font-style: normal;
+    font-size: 1.1em;
+}
+
+::ng-deep .mat-form-field{ 
+    width:100% !important; 
+}
+
+
+.sub-header {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: normal;
+}
+
+.content-2 {
+    font-weight: normal;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.button-panel {
+    padding-top: 3em;
+}
+
+.button-item {
+    background: black;
+    color: white;
+}
+
+.ack-panel {
+  padding: 3em 1em 3em 1em;
+}
+
+.message {
+    width: 100em;
+}
+
